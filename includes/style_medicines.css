@@ -1,0 +1,129 @@
+.med-search-bar {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    border-radius: 10px;
+    padding: 10px 16px;
+    gap: 10px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+    margin-bottom: 16px;
+}
+
+.med-search-icon {
+    color: #9ca3af;
+    gap: 1px
+    
+    
+}
+
+.med-search-bar input[type="text"] {
+    flex: 1;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    padding: 6px 0;
+}
+
+.med-search-btn {
+    background: #eef2ee;
+    border: none;
+    border-radius: 20px;
+    padding: 8px 18px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #1f2937;
+    cursor: pointer;
+}
+
+.med-search-btn:hover {
+    background: #e2e8e2;
+}
+
+.med-filters-bar {
+    display: flex;
+    align-items: flex-end;
+    gap: 24px;
+    background: #f6f8f6;
+    border-radius: 10px;
+    padding: 16px 20px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.med-filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.med-filter-group label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #374151;
+}
+
+.med-filter-group select {
+    padding: 8px 12px;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+    background: #fff;
+    font-size: 13px;
+    min-width: 160px;
+}
+
+.med-add-btn {
+    margin-left: auto;
+    background: #2f6f4f;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    padding: 10px 20px;
+    border-radius: 8px;
+    white-space: nowrap;
+}
+
+.med-add-btn:hover {
+    background: #245a3f;
+}
+
+.badge-ok {
+    background: #e6f2ea;
+    color: #2f6f4f;
+}
+
+.badge-warn {
+    background: #fdf0d5;
+    color: #b8860b;
+}
+
+.med-actions {
+    display: flex;
+    gap: 12px;
+    font-size: 15px;
+}
+
+.med-actions a {
+    text-decoration: none;
+    color: #4b5563;
+    cursor: pointer;
+}
+
+.med-actions a.med-delete {
+    color: #c0392b;
+}
+
+.med-actions a:hover {
+    opacity: 0.7;
+}
+
+@media (max-width: 700px) {
+    .med-filters-bar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .med-add-btn {
+        margin-left: 0;
+    }
+}

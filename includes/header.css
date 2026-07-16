@@ -1,0 +1,89 @@
+/* =========================================================
+   PIMS Header Styles
+   ========================================================= */
+
+.pims-main {
+    flex: 1;
+    padding: 2px 0;
+    min-width: 0;
+    
+}
+
+.pims-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 4px;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    /* background-color: #eef2ee; */
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+    
+}
+
+.pims-page-title {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 700;
+    color: #14181f;
+}
+
+.pims-user {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.pims-user-text {
+    text-align: right;
+}
+
+.pims-user-name {
+    margin: 0;
+    font-size: 15px;
+    font-weight: 600;
+    color: #14181f;
+}
+
+.pims-user-role {
+    margin: 2px 0 0;
+    font-size: 13px;
+    color: #6b7280;
+}
+
+.pims-avatar-img {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.pims-avatar-fallback {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background: #1c2733;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 600px) {
+    .pims-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .pims-user {
+        align-self: flex-end;
+    }
+}
