@@ -39,7 +39,9 @@ function pims_active($page, $current) {
     return $page === $current ? 'active' : '';
 }
 ?>
-<link rel="stylesheet" href="style.css">
+
+<!-- <link rel="stylesheet" href="style.css"> -->
+ <link rel="stylesheet" href="includes/style.css">
 <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.2.0/css/all.min.css"> -->
 
 <aside class="sidebar">

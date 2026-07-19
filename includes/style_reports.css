@@ -1,0 +1,71 @@
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.report-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 22px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 200px;
+}
+
+.report-header {
+    font-size: 16px;
+    font-weight: 700;
+    color: #14181f;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.data-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    color: #4b5563;
+    padding: 8px 0;
+    border-bottom: 1px solid #f1f2f4;
+}
+
+.data-row:last-child {
+    border-bottom: none;
+}
+
+.data-row span:last-child {
+    font-weight: 600;
+    color: #14181f;
+}
+
+.export-btn {
+    margin-top: 18px;
+    background: #eef2ee;
+    color: #1f2937;
+    border: none;
+    text-decoration: none;
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 13px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    cursor: pointer;
+}
+
+.export-btn:hover {
+    background: #e2e8e2;
+}
+
+@media (max-width: 900px) {
+    .card-grid {
+        grid-template-columns: 1fr;
+    }
+}

@@ -160,6 +160,7 @@ footer {
 html, body {
     height: 100%;
     margin: 0;
+    background-color: #f3f9ff;
 }
 .app-layout {
     display: flex;
@@ -203,21 +204,6 @@ html, body {
     margin-bottom: 26px;
 }
 
-/* .pims-logo-text h1 {
-    margin: 0;
-    font-size: 26px;
-    font-weight: 800;
-    color: #14181f;
-    letter-spacing: 0.5px;
-} */
-
-/* .pims-logo-text p {
-    margin: 0;
-    font-size: 10px;
-    font-style: italic;
-    color: #333;
-    line-height: 1.25;
-} */
 
 /* ---------- Nav ---------- */
 .pims-nav {

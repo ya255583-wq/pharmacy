@@ -170,7 +170,7 @@ $pageTitle = 'Medicines';
                             <th>Selling Price</th>
                             <th>Expiry Date</th>
                             <th>Status</th>
-                            <th>Actions</th>
+                            <!-- <th>Actions</th> -->
                         </tr>
                     </thead>
                     <tbody>
@@ -187,11 +187,11 @@ $pageTitle = 'Medicines';
                                 <td>UGX <?= number_format($m['sellingPrice']) ?></td>
                                 <td><?= date('d M Y', strtotime($m['expiryDate'])) ?></td>
                                 <td><span class="badge <?= $status['class'] ?>"><?= $status['label'] ?></span></td>
-                                <td class="med-actions">
+                                <!-- <td class="med-actions">
                                     <a href="view_medicine.php?id=<?= $m['medicineId'] ?>" title="View">&#128065;</a>
                                     <a href="edit_medicine.php?id=<?= $m['medicineId'] ?>" title="Edit">&#9998;</a>
                                     <a href="delete_medicine.php?id=<?= $m['medicineId'] ?>" title="Delete" class="med-delete" onclick="return confirm('Delete this medicine?');">&#128465;</a>
-                                </td>
+                                </td> -->
                             </tr>
                         <?php endforeach; endif; ?>
                     </tbody>
