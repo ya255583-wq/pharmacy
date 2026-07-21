@@ -6,13 +6,14 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-body {
+/* body {
     background-color: #1e303d;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    background: #1e303d;
 
-}
+} */
 
 /* Container for Main Content */
 .main-container {

@@ -2,18 +2,11 @@
 require_once 'includes/auth.php';
 require_once 'connect.php';
 
-/* ---------------------------------------------------------
-   Read filters from the URL (all optional, all safe defaults)
-   --------------------------------------------------------- */
 $search      = trim($_GET['q'] ?? '');
 $categoryId  = $_GET['category'] ?? '';
 $stockStatus = $_GET['stock_status'] ?? '';   // '', 'low', 'expired', 'ok'
 $expiryRange = $_GET['expiry_range'] ?? '';   // '', '30', '90', 'expired'
 
-/* ---------------------------------------------------------
-   Build the query dynamically but safely (prepared statement,
-   parts added conditionally instead of concatenating user input)
-   --------------------------------------------------------- */
 $where  = [];
 $params = [];
 
@@ -46,29 +39,23 @@ if ($expiryRange === '30') {
 
 $whereSql = $where ? ('WHERE ' . implode(' AND ', $where)) : '';
 
-$sql = "
-    SELECT m.medicineId, m.medicineName, c.categoryName, s.supplierName,
-           m.quantity, m.minStock, m.price, m.sellingPrice, m.expiryDate
-    FROM medicines m
-    LEFT JOIN categories c ON c.categoryId = m.categoryId
-    LEFT JOIN suppliers s  ON s.supplierId  = m.supplierId
+$sql = "SELECT m.medicineId, m.medicineName, c.categoryName, s.supplierName, m.quantity, m.minStock, m.price, m.sellingPrice, m.expiryDate
+FROM medicines m LEFT JOIN categories c ON c.categoryId = m.categoryId
+LEFT JOIN suppliers s  ON s.supplierId  = m.supplierId
     $whereSql
     ORDER BY m.medicineId ASC
 ";
 
 $stmt = $db->prepare($sql);
-// $stmt->execute($params);
+$stmt->execute($params);
 $medicines = $stmt->fetchAll();
 
 // For the Category filter dropdown
 $categories = $db->query("SELECT categoryId, categoryName FROM categories ORDER BY categoryName")->fetchAll();
 
-/* ---------------------------------------------------------
-   Helpers
-   --------------------------------------------------------- */
-function medicineCode($id) {
-    return 'MED-' . strtoupper(base_convert($id, 10, 36));
-}
+// function medicineCode($id) {
+//     return 'MED-' . strtoupper(base_convert($id, 10, 36));
+// }
 
 function medicineStatus($row) {
     $expired = strtotime($row['expiryDate']) < strtotime('today');
@@ -178,7 +165,7 @@ $pageTitle = 'Medicines';
                             <tr><td colspan="10" class="empty-row">No medicines match your filters.</td></tr>
                         <?php else: foreach ($medicines as $m): $status = medicineStatus($m); ?>
                             <tr>
-                                <td><?= medicineCode($m['medicineId']) ?></td>
+                                <td><?= ($m['medicineId']) ?></td>
                                 <td><?= htmlspecialchars($m['medicineName']) ?></td>
                                 <td><?= htmlspecialchars($m['categoryName'] ?? 'N/A') ?></td>
                                 <td><?= htmlspecialchars($m['supplierName'] ?? 'N/A') ?></td>

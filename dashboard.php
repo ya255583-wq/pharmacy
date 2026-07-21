@@ -162,7 +162,7 @@ function stockStatus($row)
                 <div class="panel">
                     <div class="panel-header">
                         <span class="panel-title">Medicines Expiring Soon</span>
-                        <a href="expiring_medicines.php" class="view-all">View all</a>
+                        <!-- <a href="expiring_medicines.php" class="view-all">View all</a> -->
                     </div>
                     <table>
                         <thead>

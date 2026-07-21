@@ -33,12 +33,15 @@ create table suppliers(
 create table medicines(
     medicineId int auto_increment primary key,
     medicineName varchar(100) not null,
+    barcode varchar(50) unique,
     categoryId int ,
     supplierId int,
     price decimal(10,2),
+    sellingPrice decimal(10,2),
     quantity int,
     manufactureDate date,
     expiryDate date,
+    minStock int,
     foreign key (categoryId) references categories(categoryId),
     foreign key (supplierId) references suppliers(supplierId)
 );
@@ -107,21 +110,22 @@ insert into suppliers (supplierId, supplierName, contactName, email, phone, addr
 
 -- sample data medicines
 
-insert into medicines (medicineId, medicineName, categoryId, supplierId, price, quantity, manufactureDate, expiryDate) values
-(1, 'Paracetamol', 1, 1, 1500, 1000, '2023-01-01', '2025-01-01'),
-(2, 'Amoxicillin', 2, 2, 2000, 500, '2023-02-01', '2025-02-01'),
-(3, 'Ibuprofen', 1, 1, 1000, 800, '2023-03-01', '2025-03-01'),
-(4, 'Metformin', 6, 3, 1000, 600, '2023-04-01', '2025-04-01'),
-(5, 'Cetirizine', 3, 2, 4000, 700, '2023-04-01', '2025-06-01');
+insert into medicines (medicineId, medicineName, barcode, categoryId, supplierId, price, sellingPrice, quantity, manufactureDate, expiryDate, minStock) values
+(1, 'Paracetamol', null, 1, 1, 1500.00, 1950.00, 1000, '2023-01-01', '2025-01-01', 100),
+(2, 'Amoxicillin', null, 2, 2, 2000.00, 2600.00, 500, '2023-02-01', '2025-02-01', 100),
+(3, 'Ibuprofen', null, 1, 1, 1000.00, 1300.00, 800, '2023-03-01', '2025-03-01', 100),
+(4, 'Metformin', null, 6, 3, 1000.00, 1300.00, 600, '2023-04-01', '2025-04-01', 100),
+(5, 'Cetirizine', null, 3, 2, 4000.00, 5200.00, 700, '2023-04-01', '2025-06-01', 100);
 
 -- sample data sales
 
-insert into sales (saleId, userId, totalAmount, paymentMethod) values
-(1, 1, 5000, 'cash'),
-(2, 2, 3000, 'Mobile Money'),
-(3, 3, 7000, 'cash'),
-(4, 4, 8000, 'Mobile Money'),
-(5, 5, 6000, 'cash');
+insert into sales (saleId, userId, totalAmount, paymentMethod, saleDate) values
+(1, 1, 5000, 'cash', '2024-06-26 10:00:00'),
+(2, 2, 3000, 'Mobile Money', '2024-06-26 11:00:00'),
+(3, 3, 7000, 'cash', '2024-06-26 12:00:00'),
+(4, 4, 8000, 'Mobile Money', '2024-06-26 13:00:00'),
+(5, 5, 6000, 'cash', '2024-06-26 14:00:00');
+
 
 -- sample data sale_details
 

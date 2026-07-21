@@ -57,9 +57,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link rel="stylesheet" href="includes/style.css">
 </head>
 
-<body class="login-page">
+<body class="login-page" style="background-color: #1e303d;">
 
-    <div class="main-container">
+    <div class="main-container" style="background-color: #1e303d;">
         <div class="logo-container">
             <img src="includes/logo.png" alt="Logo">
         </div>
